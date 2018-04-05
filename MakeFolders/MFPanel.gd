@@ -10,6 +10,8 @@ func _enter_tree():
     # First load the dock scene and instance it:
     MakeFolders = preload("res://addons/MakeFolders/MakeFolders.tscn").instance()
 
+    #get_tree().is_editor_hint() 
+
     # Add the loaded scene to the docks:
     add_control_to_dock(DOCK_SLOT_LEFT_UL, MakeFolders)
     # Note that LEFT_UL means the left of the editor, upper-left dock
@@ -20,7 +22,7 @@ func _enter_tree():
 
 func ScenesPressed():
 	# false = off
-	$VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/Instances.disabled = Scenes
+	#$VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/Instances.disabled = Scenes
 	if Scenes == true:
 		Scenes = false
 	elif Scenes == false:
