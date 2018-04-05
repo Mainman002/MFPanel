@@ -5,6 +5,7 @@ var ep = null
 
 var Info = true
 var extraOptions = true
+var bgImage = true
 
 var Scenes = true
 var Instances = true
@@ -66,6 +67,7 @@ func _enter_tree():
 	
 	get_node("VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer/hideInfoBTN").connect("pressed", self, "hideInfoBTNPressed")
 	get_node("VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer/hideOptionsBTN").connect("pressed", self, "hideOptionsBTNPressed")
+	get_node("VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer/hideBGImageBTN").connect("pressed", self, "hideBGImageBTNPressed")
 	get_node("VBoxContainer/CommitVBox/selectAll").connect("pressed", self, "selectAllPressed")
 	get_node("VBoxContainer/CommitVBox/deselect").connect("pressed", self, "deselectPressed")
 	get_node("VBoxContainer/CommitVBox/resetNames").connect("pressed", self, "resetNamesPressed")
@@ -190,6 +192,15 @@ func hideOptionsBTNPressed():
 		get_node("VBoxContainer/CommitVBox/selectAll").show()
 		get_node("VBoxContainer/CommitVBox/deselect").show()
 		get_node("VBoxContainer/CommitVBox/resetNames").show()
+	
+
+func hideBGImageBTNPressed():
+	if bgImage == true:
+		bgImage = false
+		get_node("bgImage").hide()
+	elif bgImage == false:
+		bgImage = true
+		get_node("bgImage").show()
 	
 
 func selectAllPressed():
