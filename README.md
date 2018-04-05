@@ -14,6 +14,10 @@ in the top left corner of the Godot3 editor panel left click " Project -> Projec
 
 How to use it is fairly strait forward, from top -> down the left side has Text Input to chose what names of folders to create, the right side allows you to toggle which folders to create. bellow these we have a few buttons that control a few things. 
 
+[ Info ] toggles the visibility of the Title info text making the menu less cluttered
+
+[ Options ] toggles the visibility of [ Select All ] [ Deselect All ] and [ Reset Names ] making the menu even more compact!
+
 [ Select All ] toggles everything to True, which means when you press [ Create Folders ] it will add all of the folders to your Assets Directory
 
 [ Deselect All ] toggles exerything to False, meaning nothing will be created when clicking [ Create Folder ]
