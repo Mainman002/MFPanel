@@ -5,7 +5,7 @@ var ep = null
 
 var Info = true
 var extraOptions = true
-var bgImage = true
+var bgImage = false
 
 var Scenes = true
 var Instances = true
@@ -24,7 +24,7 @@ var input4Name = "Sprites"
 var input5Name = "Scripts"
 var input6Name = "Sounds"
 var input7Name = "Music"
-var input8Name = "addons"
+var input8Name = "../addons"
 var input9Name = "Extra1"
 
 var input1NameReset = "Scenes"
@@ -34,7 +34,7 @@ var input4NameReset = "Sprites"
 var input5NameReset = "Scripts"
 var input6NameReset = "Sounds"
 var input7NameReset = "Music"
-var input8NameReset = "addons"
+var input8NameReset = "../addons"
 var input9NameReset = "Extra1"
 
 var dir = null
