@@ -3,6 +3,9 @@ extends PanelContainer
 
 var ep = null
 
+var Info = true
+var extraOptions = true
+
 var Scenes = true
 var Instances = true
 var Textures = true
@@ -61,6 +64,8 @@ func _enter_tree():
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/addons").connect("pressed", self, "addonsPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Extra1").connect("pressed", self, "Extra1Pressed")
 	
+	get_node("VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer/hideInfoBTN").connect("pressed", self, "hideInfoBTNPressed")
+	get_node("VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer/hideOptionsBTN").connect("pressed", self, "hideOptionsBTNPressed")
 	get_node("VBoxContainer/CommitVBox/selectAll").connect("pressed", self, "selectAllPressed")
 	get_node("VBoxContainer/CommitVBox/deselect").connect("pressed", self, "deselectPressed")
 	get_node("VBoxContainer/CommitVBox/resetNames").connect("pressed", self, "resetNamesPressed")
@@ -160,6 +165,31 @@ func Extra1Pressed():
 		Extra1 = true
 #	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
 		
+	
+
+func hideInfoBTNPressed():
+	if Info == true:
+		Info = false
+		get_node("VBoxContainer/HSeparator0").hide()
+		get_node("VBoxContainer/Title").hide()
+	elif Info == false:
+		Info = true
+		get_node("VBoxContainer/HSeparator0").show()
+		get_node("VBoxContainer/Title").show()
+		
+	
+
+func hideOptionsBTNPressed():
+	if extraOptions == true:
+		extraOptions = false
+		get_node("VBoxContainer/CommitVBox/selectAll").hide()
+		get_node("VBoxContainer/CommitVBox/deselect").hide()
+		get_node("VBoxContainer/CommitVBox/resetNames").hide()
+	elif extraOptions == false:
+		extraOptions = true
+		get_node("VBoxContainer/CommitVBox/selectAll").show()
+		get_node("VBoxContainer/CommitVBox/deselect").show()
+		get_node("VBoxContainer/CommitVBox/resetNames").show()
 	
 
 func selectAllPressed():
