@@ -7,7 +7,7 @@ path="res://.import/bg.png-1bb7717590be19bc4170b13907931282.stex"
 [deps]
 
 source_file="res://addons/MakeFolders/Sprite/bg.png"
-source_md5="0b3256b140cd773c6d3d1316fbef775d"
+source_md5="f22c0e82609485ada860cbbc8d26f142"
 
 dest_files=[ "res://.import/bg.png-1bb7717590be19bc4170b13907931282.stex" ]
 dest_md5="84511021bbc8c9d37c7f0f4d181de883"
