@@ -23,6 +23,16 @@ var input7Name = "Music"
 var input8Name = "addons"
 var input9Name = "Extra1"
 
+var input1NameReset = "Scenes"
+var input2NameReset = "Instances"
+var input3NameReset = "Textures"
+var input4NameReset = "Sprites"
+var input5NameReset = "Scripts"
+var input6NameReset = "Sounds"
+var input7NameReset = "Music"
+var input8NameReset = "addons"
+var input9NameReset = "Extra1"
+
 var dir = null
 
 #onready var ScenesNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scenes")
@@ -53,6 +63,7 @@ func _enter_tree():
 	
 	get_node("VBoxContainer/CommitVBox/selectAll").connect("pressed", self, "selectAllPressed")
 	get_node("VBoxContainer/CommitVBox/deselect").connect("pressed", self, "deselectPressed")
+	get_node("VBoxContainer/CommitVBox/resetNames").connect("pressed", self, "resetNamesPressed")
 	get_node("VBoxContainer/CommitVBox/createFolders").connect("pressed", self, "createFoldersPressed")
 	
 	ep = EditorPlugin.new() # get_tree().get_edited_scene_root().
@@ -196,6 +207,30 @@ func deselectPressed():
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Music").pressed = false
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/addons").pressed = false
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Extra1").pressed = false
+		
+	
+
+func resetNamesPressed():
+	
+	input1Name = input1NameReset
+	input2Name = input2NameReset
+	input3Name = input3NameReset
+	input4Name = input4NameReset
+	input5Name = input5NameReset
+	input6Name = input6NameReset
+	input7Name = input7NameReset
+	input8Name = input8NameReset
+	input9Name = input9NameReset
+	
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line1").set_text(input1NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line2").set_text(input2NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line3").set_text(input3NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line4").set_text(input4NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line5").set_text(input5NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line6").set_text(input6NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line7").set_text(input7NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line8").set_text(input8NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line9").set_text(input9NameReset)
 		
 	
 
