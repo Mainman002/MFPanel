@@ -24,6 +24,8 @@ How to use it is fairly strait forward, from top -> down the left side has Text 
 
 [ Reset Names ] sets all Input Text to Default Values
 
+[ BG ] toggles the visibility of panel's background tile-able texture
+
 oh yeah you can even modify the backgroung texture located in " addons/MakeFolders/Sprites/bg.png " for some tile-able panel fun xD
 
 well I think that concludes my overview and instructions for FMPanel, I hope it helps you, and maybe makes life a little easier.
