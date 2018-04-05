@@ -26,6 +26,8 @@ How to use it is fairly strait forward, from top -> down the left side has Text 
 
 [ BG ] toggles the visibility of panel's background tile-able texture
 
+[ Assets ] text edit node which lets you select a folder directory to add the selected folders. !! Be careful, setting this for adding 2 or more new folders will just switch to adding them to your " res:// " directory !! ( just a little bug I need to work out later )
+ 
 oh yeah you can even modify the backgroung texture located in " addons/MakeFolders/Sprites/bg.png " for some tile-able panel fun xD
 
 !! one thing to note is once folders are created, godot wont be able to see them until you click outside of the Godot editor (like on your PC desktop) and then click on the Godot editor window again. . . for some reason godot doesn't auto update the directory list (yet) !!
