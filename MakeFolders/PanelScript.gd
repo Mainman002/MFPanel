@@ -10,6 +10,7 @@ var bgImage = false
 var Scenes = true
 var Instances = true
 var Textures = true
+var Materials = true
 var Sprites = true
 var Scripts = true
 var Sounds = true
@@ -17,6 +18,8 @@ var Music = true
 var addons = true
 var Extra1 = true
 
+var MainFolder = "res://"
+var CreateFolderName = "Assets"
 var input1Name = "Scenes"
 var input2Name = "Instances"
 var input3Name = "Textures"
@@ -26,38 +29,32 @@ var input6Name = "Sounds"
 var input7Name = "Music"
 var input8Name = "../addons"
 var input9Name = "Extra1"
-
-var input1NameReset = "Scenes"
-var input2NameReset = "Instances"
-var input3NameReset = "Textures"
-var input4NameReset = "Sprites"
-var input5NameReset = "Scripts"
-var input6NameReset = "Sounds"
-var input7NameReset = "Music"
-var input8NameReset = "../addons"
-var input9NameReset = "Extra1"
+var input10Name = "Materials"
 
 var dir = null
 
-#onready var ScenesNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scenes")
-#onready var InstancesNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances")
-#onready var TexturesNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Textures")
-#onready var SpritesNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Sprites")
-#onready var ScriptsNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scripts")
-#onready var SoundsNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Sounds")
-#onready var MusicNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Music")
-#onready var addonsNode = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/addons")
-#onready var Extra1Node = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Extra1")
+const CreateFolderNameReset = "Assets"
+const input1NameReset = "Scenes"
+const input2NameReset = "Instances"
+const input3NameReset = "Textures"
+const input4NameReset = "Sprites"
+const input5NameReset = "Scripts"
+const input6NameReset = "Sounds"
+const input7NameReset = "Music"
+const input8NameReset = "../addons"
+const input9NameReset = "Extra1"
+const input10NameReset = "Materials"
 
 func _enter_tree():
 	
-	var dir = Directory.new()
-	dir.open("res://")
-	dir.make_dir("Assets")
+#	var dir = Directory.new()
+#	dir.open("res://")
+#	dir.make_dir("Assets")
 	
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scenes").connect("pressed", self, "ScenesPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").connect("pressed", self, "InstancesPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Textures").connect("pressed", self, "TexturesPressed")
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Materials").connect("pressed", self, "MaterialsPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Sprites").connect("pressed", self, "SpritesPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scripts").connect("pressed", self, "ScriptsPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Sounds").connect("pressed", self, "SoundsPressed")
@@ -74,10 +71,6 @@ func _enter_tree():
 	get_node("VBoxContainer/CommitVBox/createFolders").connect("pressed", self, "createFoldersPressed")
 	
 	ep = EditorPlugin.new() # get_tree().get_edited_scene_root().
-
-#func _ready():
-#	$VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/Scenes.connect("pressed", self, "ScenesPressed")
-#	pass
 	
 func ScenesPressed():
 	# false = off
@@ -85,7 +78,6 @@ func ScenesPressed():
 		Scenes = false
 	elif Scenes == false:
 		Scenes = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
 		
 	
 
@@ -95,7 +87,6 @@ func InstancesPressed():
 		Instances = false
 	elif Instances == false:
 		Instances = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
 		
 	
 
@@ -105,7 +96,15 @@ func TexturesPressed():
 		Textures = false
 	elif Textures == false:
 		Textures = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
+		
+	
+
+func MaterialsPressed():
+	# false = off
+	if Materials == true:
+		Materials = false
+	elif Materials == false:
+		Materials = true
 		
 	
 
@@ -187,11 +186,13 @@ func hideOptionsBTNPressed():
 		get_node("VBoxContainer/CommitVBox/selectAll").hide()
 		get_node("VBoxContainer/CommitVBox/deselect").hide()
 		get_node("VBoxContainer/CommitVBox/resetNames").hide()
+		get_node("VBoxContainer/CommitVBox/folderName").hide()
 	elif extraOptions == false:
 		extraOptions = true
 		get_node("VBoxContainer/CommitVBox/selectAll").show()
 		get_node("VBoxContainer/CommitVBox/deselect").show()
 		get_node("VBoxContainer/CommitVBox/resetNames").show()
+		get_node("VBoxContainer/CommitVBox/folderName").show()
 	
 
 func hideBGImageBTNPressed():
@@ -208,6 +209,7 @@ func selectAllPressed():
 	Scenes = true
 	Instances = true
 	Textures = true
+	Materials = true
 	Sprites = true
 	Scripts = true
 	Sounds = true
@@ -218,6 +220,7 @@ func selectAllPressed():
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scenes").pressed = true
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = true
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Textures").pressed = true
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Materials").pressed = true
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Sprites").pressed = true
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scripts").pressed = true
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Sounds").pressed = true
@@ -232,6 +235,7 @@ func deselectPressed():
 	Scenes = false
 	Instances = false
 	Textures = false
+	Materials = false
 	Sprites = false
 	Scripts = false
 	Sounds = false
@@ -242,6 +246,7 @@ func deselectPressed():
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scenes").pressed = false
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = false
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Textures").pressed = false
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Materials").pressed = false
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Sprites").pressed = false
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scripts").pressed = false
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Sounds").pressed = false
@@ -262,6 +267,8 @@ func resetNamesPressed():
 	input7Name = input7NameReset
 	input8Name = input8NameReset
 	input9Name = input9NameReset
+	input10Name = input10NameReset
+	CreateFolderName = CreateFolderNameReset
 	
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line1").set_text(input1NameReset)
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line2").set_text(input2NameReset)
@@ -272,14 +279,18 @@ func resetNamesPressed():
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line7").set_text(input7NameReset)
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line8").set_text(input8NameReset)
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line9").set_text(input9NameReset)
+	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line10").set_text(input10NameReset)
+	get_node("VBoxContainer/CommitVBox/folderName").set_text(CreateFolderNameReset)
 		
 	
 
 func createFoldersPressed():
 	
+	CreateFolderName = get_node("VBoxContainer/CommitVBox/folderName").get_text()
+	
 	var dir = Directory.new()
 	dir.open("res://")
-	dir.make_dir("Assets")
+	dir.make_dir(str(CreateFolderName))
 	
 	input1Name = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line1").get_text()
 	input2Name = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line2").get_text()
@@ -290,46 +301,52 @@ func createFoldersPressed():
 	input7Name = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line7").get_text()
 	input8Name = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line8").get_text()
 	input9Name = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line9").get_text()
+	input10Name = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line10").get_text()
 	
 #	print(ScenesNode.get(text))
 	
 	if Scenes == true:
 		print(str("mkdir: ", input1Name)) # , " ", bool(Scenes)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input1Name)
 	if Instances == true:
 		print(str("mkdir: ", input2Name)) # , " ", bool(Instances)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input2Name)
 	if Textures == true:
 		print(str("mkdir: ", input3Name)) # , " ", bool(Textures)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input3Name)
+	if Materials == true:
+		print(str("mkdir: ", input10Name)) # , " ", bool(Extra1)
+		dir.open(str("res://", CreateFolderName))
+		dir.make_dir(input10Name)
 	if Sprites == true:
 		print(str("mkdir: ", input4Name)) # , " ", bool(Sprites)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input4Name)
 	if Scripts == true:
 		print(str("mkdir: ", input5Name)) # , " ", bool(Scripts)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input5Name)
 	if Sounds == true:
 		print(str("mkdir: ", input6Name)) # , " ", bool(Sounds)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input6Name)
 	if Music == true:
 		print(str("mkdir: ", input7Name)) # , " ", bool(Music)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input7Name)
 	if addons == true:
 		print(str("mkdir: ", input8Name)) # , " ", bool(addons)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input8Name)
 	if Extra1 == true:
 		print(str("mkdir: ", input9Name)) # , " ", bool(Extra1)
-		dir.open("res://Assets")
+		dir.open(str("res://", CreateFolderName))
 		dir.make_dir(input9Name)
 	
+
 
 
 

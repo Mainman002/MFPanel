@@ -132,7 +132,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 121.0
 margin_right = 355.0
-margin_bottom = 394.0
+margin_bottom = 366.0
 rect_min_size = Vector2( 0, 64 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -151,7 +151,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 355.0
-margin_bottom = 273.0
+margin_bottom = 245.0
 rect_min_size = Vector2( 0, 64 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -167,13 +167,12 @@ _sections_unfolded = [ "Mouse" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/OptionsVBox/ScrollContainer" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 343.0
-margin_bottom = 392.0
+margin_bottom = 436.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -192,7 +191,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 343.0
-margin_bottom = 392.0
+margin_bottom = 436.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -210,7 +209,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 263.0
-margin_bottom = 392.0
+margin_bottom = 436.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -303,7 +302,7 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Line4" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="3"]
+[node name="Line10" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -312,6 +311,34 @@ anchor_bottom = 0.0
 margin_top = 132.0
 margin_right = 263.0
 margin_bottom = 172.0
+grow_horizontal = 0
+rect_min_size = Vector2( 0, 40 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Materials"
+max_length = 28
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Line4" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 176.0
+margin_right = 263.0
+margin_bottom = 216.0
 grow_horizontal = 0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -331,15 +358,15 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Line5" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="4"]
+[node name="Line5" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 176.0
+margin_top = 220.0
 margin_right = 263.0
-margin_bottom = 216.0
+margin_bottom = 260.0
 grow_horizontal = 0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -359,15 +386,15 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Line6" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="5"]
+[node name="Line6" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 220.0
+margin_top = 264.0
 margin_right = 263.0
-margin_bottom = 260.0
+margin_bottom = 304.0
 grow_horizontal = 0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -387,15 +414,15 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Line7" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="6"]
+[node name="Line7" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 264.0
+margin_top = 308.0
 margin_right = 263.0
-margin_bottom = 304.0
+margin_bottom = 348.0
 grow_horizontal = 0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -415,15 +442,15 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Line8" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="7"]
+[node name="Line8" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 308.0
+margin_top = 352.0
 margin_right = 263.0
-margin_bottom = 348.0
+margin_bottom = 392.0
 grow_horizontal = 0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -443,15 +470,15 @@ caret_blink_speed = 0.65
 caret_position = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Line9" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="8"]
+[node name="Line9" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox" index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 352.0
+margin_top = 396.0
 margin_right = 263.0
-margin_bottom = 392.0
+margin_bottom = 436.0
 grow_horizontal = 0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -480,7 +507,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 267.0
 margin_right = 343.0
-margin_bottom = 392.0
+margin_bottom = 436.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -564,7 +591,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="Sprites" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="3"]
+[node name="Materials" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -589,7 +616,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="Scripts" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="4"]
+[node name="Sprites" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -614,7 +641,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="Sounds" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="5"]
+[node name="Scripts" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -639,7 +666,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="Music" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="6"]
+[node name="Sounds" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -664,7 +691,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="addons" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="7"]
+[node name="Music" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -689,7 +716,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
-[node name="Extra1" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="8"]
+[node name="addons" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -698,6 +725,31 @@ anchor_bottom = 0.0
 margin_top = 352.0
 margin_right = 76.0
 margin_bottom = 392.0
+rect_min_size = Vector2( 0, 40 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 0
+shortcut = null
+group = null
+flat = false
+align = 0
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="Extra1" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 396.0
+margin_right = 76.0
+margin_bottom = 436.0
 rect_min_size = Vector2( 0, 40 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -719,9 +771,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 402.0
+margin_top = 374.0
 margin_right = 355.0
-margin_bottom = 418.0
+margin_bottom = 390.0
 rect_min_size = Vector2( 0, 16 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -733,12 +785,11 @@ _sections_unfolded = [ "Size Flags" ]
 
 [node name="CommitVBox" type="VBoxContainer" parent="VBoxContainer" index="5"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 426.0
+margin_top = 398.0
 margin_right = 355.0
 margin_bottom = 562.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -772,6 +823,7 @@ _sections_unfolded = [ "Scroll" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/CommitVBox/ScrollContainer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -928,7 +980,7 @@ text = "Reset Names"
 flat = false
 align = 1
 
-[node name="createFolders" type="Button" parent="VBoxContainer/CommitVBox" index="4"]
+[node name="folderName" type="LineEdit" parent="VBoxContainer/CommitVBox" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -936,7 +988,32 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 116.0
 margin_right = 355.0
-margin_bottom = 136.0
+margin_bottom = 140.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Assets"
+max_length = 28
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="createFolders" type="Button" parent="VBoxContainer/CommitVBox" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 144.0
+margin_right = 355.0
+margin_bottom = 164.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
