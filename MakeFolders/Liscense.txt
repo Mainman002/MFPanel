@@ -1,7 +1,0 @@
-Released under MIT Liscense
-
-you are free to modify, change, whatever. . . my only request is that you credit me as the original author for this MFPanel addon (doesn't need to be in your game credits, just if you release a new version of my panel and sell / distribute it)
-
-Thank you for using MFPanel!! I hope it helped speed up your development by a few seconds, and if you have any requests let me know and I might add it.
-
-author = " Johnathan Mueller "
