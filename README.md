@@ -1,37 +1,19 @@
 # MFPanel [Godot3 version] (Make_Folders_Panel)
-Is a Godot3+ Panel Addon designed to speed up folder creation in new projects.
+Is a Godot2/3 Panel Addon designed to speed up folder creation in new projects.
 
 A Quick Preview of what the MFPanel looks like ->
-https://github.com/Mainman002/MFPanel/blob/master/MFPanelPreview.png
+https://raw.githubusercontent.com/Mainman002/MFPanel/master/Godot3_Images/Preview1.png
 
-Instructions
+I made a video on it as well ->
+https://youtu.be/0fD0hVme01g?list=PL359DaN9yjMo6fHHnKftKwhpwNoSngZtq
 
-Make a folder called " addons " in your project Folder right next to your icon.png and project.godot files
+so select a branch and then you should be able to click [ clone or download ] and then click [ download ZIP ]
 
-now copy my " MakePanel " folder into your " addons " folder, next we'll mess around in Godot's editor to start it
+[ Godot2 version ] -> https://github.com/Mainman002/MFPanel/tree/MFPanel(Godot2)
+[ Godot3 version ] -> https://github.com/Mainman002/MFPanel/tree/MFPanel(Godot3)
 
-in the top left corner of the Godot3 editor panel left click " Project -> Project Settings " a new window should have appeard. Now left click " Plugins " and you should see my " MFPanel " addon. To the right is where it controls if it's " Active " or " Inactive " toggle it to Active and a new panel should appear in the Top Left of the godot editor. you might need to stretch a few panels around before you can see it.
+from there you just extract the assets folder into your godot project and then find your project settings and plugins manager, set MFPanel to Active and it should appear in the top left Godot window
 
-How to use it is fairly strait forward, from top -> down the left side has Text Input to chose what names of folders to create, the right side allows you to toggle which folders to create. bellow these we have a few buttons that control a few things. 
-
-[ Info ] toggles the visibility of the Title info text making the menu less cluttered
-
-[ Options ] toggles the visibility of [ Select All ] [ Deselect All ] and [ Reset Names ] making the menu even more compact!
-
-[ Select All ] toggles everything to True, which means when you press [ Create Folders ] it will add all of the folders to your Assets Directory
-
-[ Deselect All ] toggles exerything to False, meaning nothing will be created when clicking [ Create Folder ]
-
-[ Reset Names ] sets all Input Text to Default Values
-
-[ BG ] toggles the visibility of panel's background tile-able texture
-
-[ Assets ] text edit node which lets you select a folder directory to add the selected folders. !! Be careful, setting this for adding 2 or more new folders will just switch to adding them to your " res:// " directory !! ( just a little bug I need to work out later )
-
-oh yeah you can even modify the backgroung texture located in " addons/MakeFolders/Sprites/bg.png " for some tile-able panel fun xD
-
-!! one thing to note is once folders are created, godot wont be able to see them until you click outside of the Godot editor (like on your PC desktop) and then click on the Godot editor window again. . . for some reason godot doesn't auto update the directory list (yet) !!
-
-well I think that concludes my overview and instructions for FMPanel, I hope it helps you, and maybe makes life a little easier.
+currently I'm setting it up so that you can download it via Godot's asset library under tools / page2 / MFPanel (if I did everything properly you should see preview images and a youtube video link) click install and select what you want to download, then follow the same steps above to activate MFPanel (I might make another youtube video later to show how to use it better)
 
 Thank you for your interest, and good luck on your projects / games!
