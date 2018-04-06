@@ -45,10 +45,6 @@ const input10NameReset = "Materials"
 
 func _enter_tree():
 	
-	var dir = Directory.new()
-	dir.open("res://")
-	dir.make_dir("Assets")
-	
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scenes").connect("pressed", self, "ScenesPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").connect("pressed", self, "InstancesPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Textures").connect("pressed", self, "TexturesPressed")
