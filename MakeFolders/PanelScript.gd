@@ -1,8 +1,6 @@
 tool
 extends PanelContainer
 
-var ep = null
-
 var Info = true
 var extraOptions = true
 var bgImage = false
@@ -27,8 +25,8 @@ var input4Name = "Sprites"
 var input5Name = "Scripts"
 var input6Name = "Sounds"
 var input7Name = "Music"
-var input8Name = "../addons"
-var input9Name = "Extra1"
+var input8Name = "Extra1"
+var input9Name = "Extra2"
 var input10Name = "Materials"
 
 var dir = null
@@ -41,15 +39,11 @@ const input4NameReset = "Sprites"
 const input5NameReset = "Scripts"
 const input6NameReset = "Sounds"
 const input7NameReset = "Music"
-const input8NameReset = "../addons"
-const input9NameReset = "Extra1"
+const input8NameReset = "Extra1"
+const input9NameReset = "Extra2"
 const input10NameReset = "Materials"
 
 func _enter_tree():
-	
-#	var dir = Directory.new()
-#	dir.open("res://")
-#	dir.make_dir("Assets")
 	
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Scenes").connect("pressed", self, "ScenesPressed")
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").connect("pressed", self, "InstancesPressed")
@@ -64,13 +58,10 @@ func _enter_tree():
 	
 	get_node("VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer/hideInfoBTN").connect("pressed", self, "hideInfoBTNPressed")
 	get_node("VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer/hideOptionsBTN").connect("pressed", self, "hideOptionsBTNPressed")
-	get_node("VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer/hideBGImageBTN").connect("pressed", self, "hideBGImageBTNPressed")
 	get_node("VBoxContainer/CommitVBox/selectAll").connect("pressed", self, "selectAllPressed")
 	get_node("VBoxContainer/CommitVBox/deselect").connect("pressed", self, "deselectPressed")
 	get_node("VBoxContainer/CommitVBox/resetNames").connect("pressed", self, "resetNamesPressed")
 	get_node("VBoxContainer/CommitVBox/createFolders").connect("pressed", self, "createFoldersPressed")
-	
-	ep = EditorPlugin.new() # get_tree().get_edited_scene_root().
 	
 func ScenesPressed():
 	# false = off
@@ -114,8 +105,6 @@ func SpritesPressed():
 		Sprites = false
 	elif Sprites == false:
 		Sprites = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
-		
 	
 
 func ScriptsPressed():
@@ -124,8 +113,6 @@ func ScriptsPressed():
 		Scripts = false
 	elif Scripts == false:
 		Scripts = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
-		
 	
 
 func SoundsPressed():
@@ -134,8 +121,6 @@ func SoundsPressed():
 		Sounds = false
 	elif Sounds == false:
 		Sounds = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
-		
 	
 
 func MusicPressed():
@@ -144,8 +129,6 @@ func MusicPressed():
 		Music = false
 	elif Music == false:
 		Music = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
-		
 	
 
 func addonsPressed():
@@ -154,8 +137,6 @@ func addonsPressed():
 		addons = false
 	elif addons == false:
 		addons = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
-		
 	
 
 func Extra1Pressed():
@@ -164,19 +145,17 @@ func Extra1Pressed():
 		Extra1 = false
 	elif Extra1 == false:
 		Extra1 = true
-#	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox/Instances").pressed = Scenes
-		
 	
 
 func hideInfoBTNPressed():
 	if Info == true:
 		Info = false
 		get_node("VBoxContainer/HSeparator0").hide()
-		get_node("VBoxContainer/Title").hide()
+		get_node("VBoxContainer/folderName").hide()
 	elif Info == false:
 		Info = true
 		get_node("VBoxContainer/HSeparator0").show()
-		get_node("VBoxContainer/Title").show()
+		get_node("VBoxContainer/folderName").show()
 		
 	
 
@@ -186,22 +165,11 @@ func hideOptionsBTNPressed():
 		get_node("VBoxContainer/CommitVBox/selectAll").hide()
 		get_node("VBoxContainer/CommitVBox/deselect").hide()
 		get_node("VBoxContainer/CommitVBox/resetNames").hide()
-		get_node("VBoxContainer/CommitVBox/folderName").hide()
 	elif extraOptions == false:
 		extraOptions = true
 		get_node("VBoxContainer/CommitVBox/selectAll").show()
 		get_node("VBoxContainer/CommitVBox/deselect").show()
 		get_node("VBoxContainer/CommitVBox/resetNames").show()
-		get_node("VBoxContainer/CommitVBox/folderName").show()
-	
-
-func hideBGImageBTNPressed():
-	if bgImage == true:
-		bgImage = false
-		get_node("bgImage").hide()
-	elif bgImage == false:
-		bgImage = true
-		get_node("bgImage").show()
 	
 
 func selectAllPressed():
@@ -280,13 +248,13 @@ func resetNamesPressed():
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line8").set_text(input8NameReset)
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line9").set_text(input9NameReset)
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line10").set_text(input10NameReset)
-	get_node("VBoxContainer/CommitVBox/folderName").set_text(CreateFolderNameReset)
+	get_node("VBoxContainer/folderName").set_text(CreateFolderNameReset)
 		
 	
 
 func createFoldersPressed():
 	
-	CreateFolderName = get_node("VBoxContainer/CommitVBox/folderName").get_text()
+	CreateFolderName = get_node("VBoxContainer/folderName").get_text()
 	
 	var dir = Directory.new()
 	dir.open("res://")
