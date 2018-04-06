@@ -1,4 +1,4 @@
-# MFPanel [Godot3 version] (Make_Folders_Panel)
+# MFPanel (Make_Folders_Panel) [Godot3 version]
 Is a Godot3+ Panel Addon designed to speed up folder creation in new projects.
 
 A Quick Preview of what the MFPanel looks like ->
