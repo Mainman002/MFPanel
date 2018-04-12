@@ -5,6 +5,10 @@ A Quick Preview of what the MFPanel looks like ->
 
 https://github.com/Mainman002/MFPanel/blob/master/MFPanelPreview.png
 
+My Youtube video playlist for update changes / how to use MFPanel ->
+
+https://www.youtube.com/watch?v=YCsIblKeD7w&list=PL359DaN9yjMo6fHHnKftKwhpwNoSngZtq
+
 [ Go back to Master Branch ] -> https://github.com/Mainman002/MFPanel/tree/master
 
 Instructions
