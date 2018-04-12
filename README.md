@@ -5,9 +5,9 @@ A Quick Preview of what the MFPanel looks like ->
 
 https://raw.githubusercontent.com/Mainman002/MFPanel/master/Godot3_Images/Preview1.png
 
-I made a video on it as well ->
+My Youtube video playlist for update changes / how to use MFPanel ->
 
-https://youtu.be/0fD0hVme01g?list=PL359DaN9yjMo6fHHnKftKwhpwNoSngZtq
+https://www.youtube.com/watch?v=YCsIblKeD7w&list=PL359DaN9yjMo6fHHnKftKwhpwNoSngZtq
 
 so select a branch and then you should be able to click [ clone or download ] and then click [ download ZIP ]
 
