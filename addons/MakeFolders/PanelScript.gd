@@ -5,6 +5,8 @@ var Info = true
 var extraOptions = true
 var bgImage = false
 
+var createDirFolder = true
+
 var Scenes = true
 var Instances = true
 var Textures = true
@@ -31,6 +33,7 @@ var input10Name = "Materials"
 
 var dir = null
 
+const MainFolderNameReset = "res://"
 const CreateFolderNameReset = "Assets"
 const input1NameReset = "Scenes"
 const input2NameReset = "Instances"
@@ -62,6 +65,19 @@ func _enter_tree():
 	get_node("VBoxContainer/CommitVBox/deselect").connect("pressed", self, "deselectPressed")
 	get_node("VBoxContainer/CommitVBox/resetNames").connect("pressed", self, "resetNamesPressed")
 	get_node("VBoxContainer/CommitVBox/createFolders").connect("pressed", self, "createFoldersPressed")
+	
+	get_node("VBoxContainer/titleBarVBox/HBoxC1/fileBTN").connect("pressed", self, "fileSearchSelected")
+	get_node("VBoxContainer/titleBarVBox/HBoxC2/CheckButton").connect("pressed", self, "createDirFolderSelected")
+	get_node("FileDialog").connect("confirmed", self, "FolderSelected")
+
+func createDirFolderSelected():
+	# false = off
+	if createDirFolder == true:
+		createDirFolder = false
+	elif createDirFolder == false:
+		createDirFolder = true
+		
+	
 
 func ScenesPressed():
 	# false = off
@@ -69,6 +85,7 @@ func ScenesPressed():
 		Scenes = false
 	elif Scenes == false:
 		Scenes = true
+		
 	
 
 func InstancesPressed():
@@ -77,6 +94,7 @@ func InstancesPressed():
 		Instances = false
 	elif Instances == false:
 		Instances = true
+		
 	
 
 func TexturesPressed():
@@ -85,6 +103,7 @@ func TexturesPressed():
 		Textures = false
 	elif Textures == false:
 		Textures = true
+		
 	
 
 func MaterialsPressed():
@@ -93,6 +112,7 @@ func MaterialsPressed():
 		Materials = false
 	elif Materials == false:
 		Materials = true
+		
 	
 
 func SpritesPressed():
@@ -147,11 +167,11 @@ func hideInfoBTNPressed():
 	if Info == true:
 		Info = false
 		get_node("VBoxContainer/HSeparator0").hide()
-		get_node("VBoxContainer/folderName").hide()
+		get_node("VBoxContainer/titleBarVBox").hide()
 	elif Info == false:
 		Info = true
 		get_node("VBoxContainer/HSeparator0").show()
-		get_node("VBoxContainer/folderName").show()
+		get_node("VBoxContainer/titleBarVBox").show()
 		
 	
 
@@ -232,7 +252,8 @@ func resetNamesPressed():
 	input8Name = input8NameReset
 	input9Name = input9NameReset
 	input10Name = input10NameReset
-	CreateFolderName = CreateFolderNameReset
+	MainFolder = MainFolderNameReset          # path to name
+	CreateFolderName = CreateFolderNameReset  # created folder name
 	
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line1").set_text(input1NameReset)
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line2").set_text(input2NameReset)
@@ -244,17 +265,31 @@ func resetNamesPressed():
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line8").set_text(input8NameReset)
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line9").set_text(input9NameReset)
 	get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line10").set_text(input10NameReset)
-	get_node("VBoxContainer/folderName").set_text(CreateFolderNameReset)
-		
+	get_node("VBoxContainer/titleBarVBox/HBoxC1/folderName").set_text(MainFolder)    # path to name
+	get_node("VBoxContainer/titleBarVBox/HBoxC2/dirName").set_text(CreateFolderName) # created folder name
+	
+	get_node("FileDialog").set_current_dir(str(MainFolderNameReset))
+	
+
+func fileSearchSelected():
+	get_node("FileDialog").show()
+	get_node("FileDialog").popup_centered(Vector2(0,0))
+
+func FolderSelected():
+	MainFolder = str(get_node("FileDialog").get_current_dir())
+	CreateFolderName = MainFolder
+	get_node("VBoxContainer/titleBarVBox/HBoxC1/folderName").set_text(str(MainFolder))
 	
 
 func createFoldersPressed():
-	
-	CreateFolderName = get_node("VBoxContainer/folderName").get_text()
+
+	MainFolder = get_node("VBoxContainer/titleBarVBox/HBoxC1/folderName").get_text()    # path to name
+	CreateFolderName = get_node("VBoxContainer/titleBarVBox/HBoxC2/dirName").get_text() # created folder name
 	
 	var dir = Directory.new()
-	dir.open("res://")
-	dir.make_dir(str(CreateFolderName))
+	if createDirFolder == true:
+		dir.open(str(MainFolder))           # res://Textures/Thing1
+		dir.make_dir(str(CreateFolderName)) # Assets
 	
 	input1Name = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line1").get_text()
 	input2Name = get_node("VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox/Line2").get_text()
@@ -270,47 +305,105 @@ func createFoldersPressed():
 #	print(ScenesNode.get(text))
 	
 	if Scenes == true:
-		print(str("mkdir: ", input1Name)) # , " ", bool(Scenes)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input1Name)
-	if Instances == true:
-		print(str("mkdir: ", input2Name)) # , " ", bool(Instances)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input2Name)
-	if Textures == true:
-		print(str("mkdir: ", input3Name)) # , " ", bool(Textures)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input3Name)
-	if Materials == true:
-		print(str("mkdir: ", input10Name)) # , " ", bool(Extra1)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input10Name)
-	if Sprites == true:
-		print(str("mkdir: ", input4Name)) # , " ", bool(Sprites)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input4Name)
-	if Scripts == true:
-		print(str("mkdir: ", input5Name)) # , " ", bool(Scripts)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input5Name)
-	if Sounds == true:
-		print(str("mkdir: ", input6Name)) # , " ", bool(Sounds)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input6Name)
-	if Music == true:
-		print(str("mkdir: ", input7Name)) # , " ", bool(Music)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input7Name)
-	if addons == true:
-		print(str("mkdir: ", input8Name)) # , " ", bool(addons)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input8Name)
-	if Extra1 == true:
-		print(str("mkdir: ", input9Name)) # , " ", bool(Extra1)
-		dir.open(str("res://", CreateFolderName))
-		dir.make_dir(input9Name)
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input1Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input1Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input1Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input1Name)
 	
-
+	if Instances == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input2Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input2Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input2Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input2Name)
+	
+	if Textures == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input3Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input3Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input3Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input3Name)
+	
+	if Materials == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input10Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input10Name)
+	
+	if Sprites == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input4Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input4Name)
+	
+	if Scripts == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input5Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input5Name)
+	
+	if Sounds == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input6Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input6Name)
+	
+	if Music == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input7Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input7Name)
+	
+	if addons == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input8Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input8Name)
+	
+	if Extra1 == true:
+		if createDirFolder == true:
+#			print(str("mkdir: ", MainFolder, CreateFolderName, input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder, "/", CreateFolderName))
+			dir.make_dir(str(input9Name))
+		elif createDirFolder == false:
+#			print(str("mkdir: ", input10Name)) # , " ", bool(Scenes)
+			dir.open(str(MainFolder))
+			dir.make_dir(input9Name)
+	
 
 
 

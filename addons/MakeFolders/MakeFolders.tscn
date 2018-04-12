@@ -39,21 +39,109 @@ margin/top = 0.0
 margin/right = 332.0
 margin/bottom = 16.0
 
-[node name="folderName" type="LineEdit" parent="VBoxContainer"]
+[node name="titleBarVBox" type="VBoxContainer" parent="VBoxContainer"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 20.0
+margin/right = 332.0
+margin/bottom = 72.0
+alignment = 0
+
+[node name="HBoxC1" type="HBoxContainer" parent="VBoxContainer/titleBarVBox"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 332.0
+margin/bottom = 24.0
+alignment = 0
+
+[node name="folderName" type="LineEdit" parent="VBoxContainer/titleBarVBox/HBoxC1"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 20.0
+margin/top = 0.0
+margin/right = 295.0
+margin/bottom = 24.0
+text = "res://"
+placeholder/alpha = 0.6
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="fileBTN" type="Button" parent="VBoxContainer/titleBarVBox/HBoxC1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 299.0
+margin/top = 0.0
 margin/right = 332.0
-margin/bottom = 44.0
+margin/bottom = 24.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "[->]"
+flat = false
+
+[node name="HBoxC2" type="HBoxContainer" parent="VBoxContainer/titleBarVBox"]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 28.0
+margin/right = 332.0
+margin/bottom = 52.0
+alignment = 0
+
+[node name="dirName" type="LineEdit" parent="VBoxContainer/titleBarVBox/HBoxC2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 302.0
+margin/bottom = 24.0
 text = "Assets"
 placeholder/alpha = 0.6
 focus_mode = 2
 caret/caret_blink = false
 caret/caret_blink_speed = 0.65
+
+[node name="CheckButton" type="CheckBox" parent="VBoxContainer/titleBarVBox/HBoxC2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 306.0
+margin/top = 0.0
+margin/right = 332.0
+margin/bottom = 24.0
+toggle_mode = true
+is_pressed = true
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+align = 0
 
 [node name="HSeparator1" type="HSeparator" parent="VBoxContainer"]
 
@@ -63,9 +151,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 48.0
+margin/top = 76.0
 margin/right = 332.0
-margin/bottom = 64.0
+margin/bottom = 92.0
 
 [node name="OptionsVBox" type="VBoxContainer" parent="VBoxContainer"]
 
@@ -75,9 +163,9 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 68.0
+margin/top = 96.0
 margin/right = 332.0
-margin/bottom = 423.0
+margin/bottom = 422.0
 alignment = 0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/OptionsVBox"]
@@ -90,7 +178,7 @@ size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 332.0
-margin/bottom = 355.0
+margin/bottom = 326.0
 scroll/horizontal = false
 scroll/vertical = true
 
@@ -103,8 +191,8 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 320.0
-margin/bottom = 436.0
+margin/right = 332.0
+margin/bottom = 326.0
 alignment = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer"]
@@ -116,8 +204,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 320.0
-margin/bottom = 436.0
+margin/right = 332.0
+margin/bottom = 276.0
 alignment = 0
 
 [node name="InputVBox" type="VBoxContainer" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer"]
@@ -129,21 +217,20 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 240.0
-margin/bottom = 436.0
+margin/right = 302.0
+margin/bottom = 276.0
 alignment = 0
 
 [node name="Line1" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 240.0
-margin/bottom = 40.0
+margin/right = 302.0
+margin/bottom = 24.0
 text = "Scenes"
 placeholder/alpha = 0.6
 max_length = 28
@@ -153,15 +240,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line2" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 44.0
-margin/right = 240.0
-margin/bottom = 84.0
+margin/top = 28.0
+margin/right = 302.0
+margin/bottom = 52.0
 text = "Instances"
 placeholder/alpha = 0.6
 max_length = 28
@@ -171,15 +257,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line3" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 88.0
-margin/right = 240.0
-margin/bottom = 128.0
+margin/top = 56.0
+margin/right = 302.0
+margin/bottom = 80.0
 text = "Textures"
 placeholder/alpha = 0.6
 max_length = 28
@@ -189,15 +274,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line10" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 132.0
-margin/right = 240.0
-margin/bottom = 172.0
+margin/top = 84.0
+margin/right = 302.0
+margin/bottom = 108.0
 text = "Materials"
 placeholder/alpha = 0.6
 max_length = 28
@@ -207,15 +291,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line4" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 176.0
-margin/right = 240.0
-margin/bottom = 216.0
+margin/top = 112.0
+margin/right = 302.0
+margin/bottom = 136.0
 text = "Sprites"
 placeholder/alpha = 0.6
 max_length = 28
@@ -225,15 +308,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line5" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 220.0
-margin/right = 240.0
-margin/bottom = 260.0
+margin/top = 140.0
+margin/right = 302.0
+margin/bottom = 164.0
 text = "Scripts"
 placeholder/alpha = 0.6
 max_length = 28
@@ -243,15 +325,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line6" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 264.0
-margin/right = 240.0
-margin/bottom = 304.0
+margin/top = 168.0
+margin/right = 302.0
+margin/bottom = 192.0
 text = "Sounds"
 placeholder/alpha = 0.6
 max_length = 28
@@ -261,15 +342,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line7" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 308.0
-margin/right = 240.0
-margin/bottom = 348.0
+margin/top = 196.0
+margin/right = 302.0
+margin/bottom = 220.0
 text = "Music"
 placeholder/alpha = 0.6
 max_length = 28
@@ -279,15 +359,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line8" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 352.0
-margin/right = 240.0
-margin/bottom = 392.0
+margin/top = 224.0
+margin/right = 302.0
+margin/bottom = 248.0
 text = "Extra1"
 placeholder/alpha = 0.6
 max_length = 28
@@ -297,15 +376,14 @@ caret/caret_blink_speed = 0.65
 
 [node name="Line9" type="LineEdit" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/InputVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 396.0
-margin/right = 240.0
-margin/bottom = 436.0
+margin/top = 252.0
+margin/right = 302.0
+margin/bottom = 276.0
 text = "Extra2"
 placeholder/alpha = 0.6
 max_length = 28
@@ -320,23 +398,22 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 3
-margin/left = 244.0
+margin/left = 306.0
 margin/top = 0.0
-margin/right = 320.0
-margin/bottom = 436.0
+margin/right = 332.0
+margin/bottom = 276.0
 alignment = 0
 
-[node name="Scenes" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Scenes" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 76.0
-margin/bottom = 40.0
+margin/right = 26.0
+margin/bottom = 23.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -344,17 +421,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="Instances" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Instances" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 44.0
-margin/right = 76.0
-margin/bottom = 84.0
+margin/top = 27.0
+margin/right = 26.0
+margin/bottom = 50.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -362,17 +438,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="Textures" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Textures" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 88.0
-margin/right = 76.0
-margin/bottom = 128.0
+margin/top = 54.0
+margin/right = 26.0
+margin/bottom = 77.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -380,17 +455,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="Materials" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Materials" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 132.0
-margin/right = 76.0
-margin/bottom = 172.0
+margin/top = 81.0
+margin/right = 26.0
+margin/bottom = 104.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -398,17 +472,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="Sprites" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Sprites" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 176.0
-margin/right = 76.0
-margin/bottom = 216.0
+margin/top = 108.0
+margin/right = 26.0
+margin/bottom = 131.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -416,17 +489,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="Scripts" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Scripts" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 220.0
-margin/right = 76.0
-margin/bottom = 260.0
+margin/top = 135.0
+margin/right = 26.0
+margin/bottom = 158.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -434,17 +506,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="Sounds" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Sounds" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 264.0
-margin/right = 76.0
-margin/bottom = 304.0
+margin/top = 162.0
+margin/right = 26.0
+margin/bottom = 185.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -452,17 +523,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="Music" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Music" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 308.0
-margin/right = 76.0
-margin/bottom = 348.0
+margin/top = 189.0
+margin/right = 26.0
+margin/bottom = 212.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -470,17 +540,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="addons" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="addons" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 352.0
-margin/right = 76.0
-margin/bottom = 392.0
+margin/top = 216.0
+margin/right = 26.0
+margin/bottom = 239.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -488,17 +557,16 @@ shortcut = null
 flat = false
 align = 0
 
-[node name="Extra1" type="CheckButton" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
+[node name="Extra1" type="CheckBox" parent="VBoxContainer/OptionsVBox/ScrollContainer/VBoxContainer/HBoxContainer/CheckVBox"]
 
-rect/min_size = Vector2( 0, 40 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 396.0
-margin/right = 76.0
-margin/bottom = 436.0
+margin/top = 243.0
+margin/right = 26.0
+margin/bottom = 266.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -514,9 +582,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 427.0
+margin/top = 426.0
 margin/right = 332.0
-margin/bottom = 443.0
+margin/bottom = 442.0
 
 [node name="CommitVBox" type="VBoxContainer" parent="VBoxContainer"]
 
@@ -526,7 +594,7 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 447.0
+margin/top = 446.0
 margin/right = 332.0
 margin/bottom = 565.0
 alignment = 0
@@ -541,7 +609,7 @@ size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 332.0
-margin/bottom = 22.0
+margin/bottom = 23.0
 scroll/horizontal = true
 scroll/vertical = false
 
@@ -555,10 +623,10 @@ size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 332.0
-margin/bottom = 22.0
+margin/bottom = 23.0
 alignment = 0
 
-[node name="hideInfoBTN" type="CheckButton" parent="VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer"]
+[node name="hideInfoBTN" type="CheckBox" parent="VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -566,8 +634,8 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 114.0
-margin/bottom = 22.0
+margin/right = 64.0
+margin/bottom = 23.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -576,16 +644,16 @@ text = "Name"
 flat = false
 align = 0
 
-[node name="hideOptionsBTN" type="CheckButton" parent="VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer"]
+[node name="hideOptionsBTN" type="CheckBox" parent="VBoxContainer/CommitVBox/ScrollContainer/HBoxContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 118.0
+margin/left = 68.0
 margin/top = 0.0
-margin/right = 245.0
-margin/bottom = 22.0
+margin/right = 145.0
+margin/bottom = 23.0
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -601,9 +669,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 26.0
+margin/top = 27.0
 margin/right = 332.0
-margin/bottom = 46.0
+margin/bottom = 47.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -617,9 +685,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 50.0
+margin/top = 51.0
 margin/right = 332.0
-margin/bottom = 70.0
+margin/bottom = 71.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -633,9 +701,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 74.0
+margin/top = 75.0
 margin/right = 332.0
-margin/bottom = 94.0
+margin/bottom = 95.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -649,9 +717,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 98.0
+margin/top = 99.0
 margin/right = 332.0
-margin/bottom = 118.0
+margin/bottom = 119.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -669,5 +737,24 @@ margin/left = 0.0
 margin/top = 569.0
 margin/right = 332.0
 margin/bottom = 585.0
+
+[node name="FileDialog" type="FileDialog" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 7.0
+margin/top = 7.0
+margin/right = 339.0
+margin/bottom = 592.0
+popup/exclusive = false
+window/title = "Open a Directory"
+dialog/hide_on_ok = true
+mode = 2
+access = 0
+filters = StringArray(  )
+show_hidden_files = false
 
 
