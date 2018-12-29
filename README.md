@@ -1,10 +1,6 @@
 # MFPanel (Make_Folders_Panel) [Godot3 version]
 Is a Godot3+ Panel Addon designed to speed up folder creation in new projects.
 
-A Quick Preview of what the MFPanel looks like ->
-
-https://github.com/Mainman002/MFPanel/blob/master/MFPanelPreview.png
-
 My Youtube video playlist for update changes / how to use MFPanel ->
 
 https://www.youtube.com/watch?v=YCsIblKeD7w&list=PL359DaN9yjMo6fHHnKftKwhpwNoSngZtq
@@ -42,3 +38,7 @@ oh yeah you can even modify the backgroung texture located in " addons/MakeFolde
 well I think that concludes my overview and instructions for FMPanel, I hope it helps you, and maybe makes life a little easier.
 
 Thank you for your interest, and good luck on your projects / games!
+
+![alt text](https://github.com/Mainman002/MFPanel/blob/master/Godot2_Images/Preview1.png)
+
+![alt text](https://github.com/Mainman002/MFPanel/blob/master/Godot3_Images/Preview2.png)
