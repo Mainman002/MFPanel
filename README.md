@@ -19,4 +19,4 @@ Thank you for your interest, and good luck on your projects / games!
 
 ![alt text](https://github.com/Mainman002/MFPanel/blob/master/Godot2_Images/Preview1.png)
 
-![alt text](https://github.com/Mainman002/MFPanel/blob/master/Godot3_Images/Preview1.png)
+![alt text](https://github.com/Mainman002/MFPanel/blob/master/Godot3_Images/Preview2.png)
