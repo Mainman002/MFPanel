@@ -1,10 +1,6 @@
 # MFPanel (Make_Folders_Panel) [Master Branch]
 Is a Godot2/3 Panel Addon designed to speed up folder creation in new projects.
 
-A Quick Preview of what the MFPanel looks like ->
-
-https://raw.githubusercontent.com/Mainman002/MFPanel/master/Godot3_Images/Preview1.png
-
 My Youtube video playlist for update changes / how to use MFPanel ->
 
 https://www.youtube.com/watch?v=YCsIblKeD7w&list=PL359DaN9yjMo6fHHnKftKwhpwNoSngZtq
